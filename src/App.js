@@ -29,13 +29,13 @@ export default function App() {
             <textarea 
               className={message.length > maxLength ? "too-long" : ""}
               id="status" 
-              placeholder="I'm crushing it!"
+              placeholder="Tell me something good..."
               value={message} 
               onChange={handleOnChange} 
               //Inline function could be used here for onChange instead.
               // For example: onChange={(e) => setMessage(e.target.value)}//
             />
-            <button disabled={message.length > maxLength} type="submit">Tell the world!</button>
+            <button disabled={message.length < 1 || message.length > maxLength} type="submit">Tell the world!</button>
           </form>
         </div>
       )}
