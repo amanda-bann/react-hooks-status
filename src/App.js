@@ -19,6 +19,7 @@ export default function App() {
             Tell us how you are doing in 60 characters or less!
           </label>
           <textarea 
+            className={message.length > maxLength ? "too-long" : ""}
             id="status" 
             placeholder="I'm crushing it!"
             value={message} 
@@ -26,7 +27,7 @@ export default function App() {
             //Inline function could be used here for onChange instead.
             // For example: onChange={(e) => setMessage(e.target.value)}//
             />
-          <button type="submit">Tell the world!</button>
+          <button disabled={message.length > maxLength} type="submit">Tell the world!</button>
         </form>
       </div>
     </div>
